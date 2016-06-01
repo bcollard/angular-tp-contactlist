@@ -13,6 +13,8 @@ angular.module('contactsApp')
     	$scope.contact.id = $scope.contacts.length + 1;
         $scope.contacts.push($scope.contact);
 
+        console.dir($scope.contact);
+
         $location.path("#/list");
     }
   });

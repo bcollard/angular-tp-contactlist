@@ -1,15 +1,34 @@
-<div class="row marketing" ng-controller="ListCtrl">
-  <h4>My contact list</h4>
+<div class="row marketing" style="margin-top:0px" ng-controller="ListCtrl">
+  <h3>My contact list</h4>
   
-    <p>
-      <label>Search: <input ng-model="searchText"></label>
-    </p>
-    <p>
-      <label for="rbOrderBy">Order by:
-        <input type="radio" name="rbOrderBy" ng-model="rbOrderBy" value="+lastName" checked>Last name ASC</input>
-        <input type="radio" name="rbOrderBy" ng-model="rbOrderBy" value="-lastName">Last name DESC</input>
-      </label>
-    </p>
+    <form class="form-horizontal">
+      <div class="form-group">
+        <label for="searchText" class="col-sm-offset-2 col-sm-4 control-label">Search by last name</label>
+        <div class="col-sm-4" style="padding-left:0px">
+          <input ng-model="searchText" name="searchText" class="form-control">
+        </div>  
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-6 control-label">
+        <label>Order by</label>
+        </div>
+        <div class="col-sm-offset-6">
+          <div class="radio" class="col-sm-6">
+            <label for="rbOrderByAsc">
+              <input type="radio" name="rbOrderByAsc" ng-model="rbOrderBy" value="+lastName" checked>
+              Last name ASC
+            </label> 
+          </div>
+          <div class="radio" class="col-sm-6">
+            <label for="rbOrderByDesc">
+              <input type="radio" name="rbOrderByDesc" ng-model="rbOrderBy" value="-lastName">
+              Last name DESC
+            </label> 
+          </div>
+        </div>
+      </div>
+    </form>
 
     <table class="table">
       <thead>
