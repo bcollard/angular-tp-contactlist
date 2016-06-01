@@ -1,0 +1,28 @@
+<div class="row marketing" ng-controller="ListCtrl">
+  <h4>My contact list</h4>
+  
+    <p>
+      <label>Search: <input ng-model="searchText"></label>
+    </p>
+    <p>
+      <label for="rbOrderBy">Order by:
+        <input type="radio" name="rbOrderBy" ng-model="rbOrderBy" value="+lastName" checked>Last name ASC</input>
+        <input type="radio" name="rbOrderBy" ng-model="rbOrderBy" value="-lastName">Last name DESC</input>
+      </label>
+    </p>
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="contact in contacts | orderBy:rbOrderBy | filter:searchText">
+          <td><a href="#/detail/{{contact.id}}">{{contact.firstName}}</a></td>
+          <td><a href="#/detail/{{contact.id}}">{{contact.lastName}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+</div>

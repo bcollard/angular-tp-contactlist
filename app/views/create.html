@@ -1,0 +1,25 @@
+<form name="editForm" novalidate ng-submit="addContact()">
+    <label class="control-label"><b>Nom :   </b></label>
+    <input type="text" name="firstName" ng-model="contact.firstName" required><span> * </span><BR>
+
+	<label class="control-label"><b>Prenom :   </b></label>
+	<input type="text" name="lastName" ng-model="contact.lastName" required><span> * </span><BR>
+
+	<label class="control-label"><b>Téléphone :   </b></label>
+	<input type="text" name="phoneNumber" ng-model="contact.phoneNumber" onkeypress='return (event.charCode >= 48 && event.charCode <= 57) || event.charCode <= 08' pattern=".{10}|.{10}" maxlength="10" required><span> * </span>
+	<span class="error" ng-show="editForm.phoneNumber.$error.text">phoneNumber format invalide !</span><BR>
+
+	<label class="control-label"><b>email :  </b></label>
+	<input type="email" name="email" ng-model="contact.email" required><span> * </span>
+	<span class="error" ng-show="editForm.email.$error.email">Email format invalide !</span><BR>
+
+	<label class="control-label"><b>date d'anniversaire :   </b></label>
+	<input type="date" name="birthday" ng-model="contact.birthday" placeholder="yyyy-MM-dd" min="1900-01-01" max="2050-12-31" required />
+	 <span> * </span>
+	<span class="error" ng-show="editForm.birthday.$error.date">Date format invalide !</span><BR>
+	<span> (*) Field mandatory</span>
+
+	<a class="btn" ng-href="#/list">Retour</a>
+
+	<button type="submit" ng-disabled="editForm.$invalid">Ajouter</button>
+</form>
