@@ -47,20 +47,3 @@ angular
         console.error('Could not get the contact file');
       }); 
   });
-
-
-// sort asc and desc
-
-// Models Contact & ContactList
-// methode fullName 
-
-// filtre niceNumber
-
-// formulaire add
-
-// view show contact
-
-// button "edit" on listPage
-// button "view" on listPage
-
-
